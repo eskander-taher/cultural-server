@@ -1,0 +1,1 @@
+The api and public dirs are for deploying on vercel, you can remove them or ignore them if you won't deploy to vercel

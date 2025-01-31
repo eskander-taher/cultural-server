@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "esnext",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": [
+		"./api/*.ts",
+		"./*.js",
+		"src/**/*.ts",
+		"test/**/*.ts",
+		"src/config/seed.js",
+		"src/models/user.model.js",
+		"src/models/memebers.model.js"
+  ],
+}
