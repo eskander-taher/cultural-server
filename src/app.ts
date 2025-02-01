@@ -17,7 +17,7 @@ app.use(cors());
 
 app.use("/api", apiRouter);
 
-app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
+app.use("/uploads", express.static(path.join(__dirname, "..", "..", "uploads")));
 
 // Set up storage engine
 const storage = multer.diskStorage({
