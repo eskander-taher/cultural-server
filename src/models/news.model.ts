@@ -7,6 +7,8 @@ export interface INews extends Document {
 	thumbnail?: string;
 	images?: string[];
 	isImportant?: boolean;
+	category?: string;
+	date: Date;
 }
 
 const NewsSchema: Schema = new Schema({
@@ -15,6 +17,9 @@ const NewsSchema: Schema = new Schema({
 	thumbnail: { type: String },
 	images: { type: [String] },
 	isImportant: { type: Boolean, default: false },
+	category: { type: String },
+	date: { type: Date, default: Date.now() },
 });
 
 export default mongoose.model<INews>("News", NewsSchema);
+

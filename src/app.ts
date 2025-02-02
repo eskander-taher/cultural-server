@@ -19,6 +19,10 @@ app.use("/api", apiRouter);
 
 app.use("/uploads", express.static(path.join(__dirname, "..", "..", "uploads")));
 
+// Set up EJS as the template engine
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
 // Set up storage engine
 const storage = multer.diskStorage({
 	destination: "./uploads/",
