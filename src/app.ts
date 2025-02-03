@@ -5,7 +5,6 @@ import path from "path";
 import { connectDB } from "./config/db";
 import apiRouter from "./routes";
 
-
 connectDB();
 
 const app = express();
@@ -14,10 +13,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-
 app.use("/api", apiRouter);
 
-app.use("/uploads", express.static(path.join(__dirname, "..", "..", "uploads")));
+app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
 
 // Set up EJS as the template engine
 app.set("view engine", "ejs");

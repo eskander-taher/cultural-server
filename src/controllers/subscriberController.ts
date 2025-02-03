@@ -12,13 +12,13 @@ const generateToken = (email: string): string => {
 
 // Function to render the email template
 const renderEmailTemplate = async (token: string, baseUrl: string): Promise<string> => {
-	const templatePath = path.join(__dirname, "../views/verificationEmail.ejs");
+	const templatePath = path.join(__dirname, "../../views/verificationEmail.ejs");
 	return ejs.renderFile(templatePath, { token, baseUrl });
 };
 
 // Function to render the confirmation email template
 const renderConfirmationEmailTemplate = async (): Promise<string> => {
-	const templatePath = path.join(__dirname, "../views/confirmationEmail.ejs");
+	const templatePath = path.join(__dirname, "../../views/confirmationEmail.ejs");
 	return ejs.renderFile(templatePath, {});
 };
 
