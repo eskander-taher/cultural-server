@@ -17,7 +17,7 @@ const NewsSchema: Schema = new Schema({
 	thumbnail: { type: String },
 	images: { type: [String] },
 	isImportant: { type: Boolean, default: false },
-	category: { type: String },
+	category: { type: String, default: "NEWS" },
 	date: { type: Date, default: Date.now() },
 });
 
