@@ -18,7 +18,7 @@ const NewsSchema: Schema = new Schema({
 	images: { type: [String] },
 	isImportant: { type: Boolean, default: false },
 	category: { type: String, default: "NEWS" },
-	date: { type: Date, default: Date.now() },
+	date: { type: Date, default: Date.now },
 });
 
 export default mongoose.model<INews>("News", NewsSchema);

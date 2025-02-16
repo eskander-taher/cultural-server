@@ -24,6 +24,55 @@ export const getAllNews = async (req: Request, res: Response) => {
 	}
 };
 
+// Get all news items with category "NEWS"
+export const getNewsCategory = async (req: Request, res: Response) => {
+	try {
+		const news = await News.find({ category: 'NEWS' });
+		res.status(200).send(news);
+	} catch (error) {
+		res.status(500).send(error);
+	}
+};
+
+// Get all news items with category "AD"
+export const getAdCategory = async (req: Request, res: Response) => {
+	try {
+		const news = await News.find({ category: 'AD' });
+		res.status(200).send(news);
+	} catch (error) {
+		res.status(500).send(error);
+	}
+};
+
+// Get all news items with category "NOTIFICATION"
+export const getNotificationCategory = async (req: Request, res: Response) => {
+	try {
+		const news = await News.find({ category: 'NOTIFICATION' });
+		res.status(200).send(news);
+	} catch (error) {
+		res.status(500).send(error);
+	}
+};
+
+// Get all news items with category "ACTIVITY"
+export const getActivityCategory = async (req: Request, res: Response) => {
+	try {
+		const news = await News.find({ category: 'ACTIVITY' });
+		res.status(200).send(news);
+	} catch (error) {
+		res.status(500).send(error);
+	}
+};
+// Get all news items with category "EVENT"
+export const getEventCategory = async (req: Request, res: Response) => {
+	try {
+		const news = await News.find({ category: 'EVENT' });
+		res.status(200).send(news);
+	} catch (error) {
+		res.status(500).send(error);
+	}
+};
+
 // Get a single news item by ID
 export const getNewsById = async (req: Request, res: Response) => {
 	try {
