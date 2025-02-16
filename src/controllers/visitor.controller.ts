@@ -12,12 +12,12 @@ const getDateRange = (timeFrame: string): { start: Date; end: Date } => {
 			};
 		case "month":
 			return {
-				start: new Date(now.setDate(1)),
+				start: new Date(now.getFullYear(), now.getMonth(), 1),
 				end: new Date(),
 			};
 		case "year":
 			return {
-				start: new Date(now.setMonth(0, 1)),
+				start: new Date(now.getFullYear(), 0, 1),
 				end: new Date(),
 			};
 		default:
