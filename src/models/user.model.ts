@@ -15,6 +15,7 @@ interface IUser extends  mongoose.Document {
   comparePassword: (password: string) => Promise<boolean>;
 }
 
+
 // Define the User schema
 const UserSchema: mongoose.Schema<IUser> = new mongoose.Schema<IUser>({
   email: {

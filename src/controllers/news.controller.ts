@@ -109,7 +109,7 @@ export const deleteNews = async (req: Request, res: Response) => {
 			res.status(404).send({ error: "News item not found" });
 			return;
 		}
-
+ 
 		// Define the upload directory
 		const uploadDir = path.join(__dirname, "..", "..", "uploads"); // Adjust the path according to your project structure
 
