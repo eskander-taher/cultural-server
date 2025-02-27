@@ -24,6 +24,34 @@ export const getAllPDFs = async (req: Request, res: Response) => {
 	}
 };
 
+// Get all PDFs
+export const getAllMagazines = async (req: Request, res: Response) => {
+	try {
+		const pdfs = await PDF.find({category: "MAGAZINE"}).sort({ date: -1 });
+		res.status(200).send(pdfs);
+	} catch (error) {
+		res.status(500).send(error);
+	}
+};
+// Get all PDFs
+export const getAllAnnounceCul = async (req: Request, res: Response) => {
+	try {
+		const pdfs = await PDF.find({category: "ANNOUNCE-CUL"}).sort({ date: -1 });
+		res.status(200).send(pdfs);
+	} catch (error) {
+		res.status(500).send(error);
+	}
+};
+// Get all PDFs
+export const getAllAnnounceMin = async (req: Request, res: Response) => {
+	try {
+		const pdfs = await PDF.find({category: "ANNOUNCE-MIN"}).sort({ date: -1 });
+		res.status(200).send(pdfs);
+	} catch (error) {
+		res.status(500).send(error);
+	}
+};
+
 // Get a single PDF by ID
 export const getPDFById = async (req: Request, res: Response) => {
 	try {

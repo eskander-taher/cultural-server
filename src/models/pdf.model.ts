@@ -4,7 +4,7 @@ export interface IPDF extends Document {
 	title: string;
 	file: string;
 	date?: Date;
-	category?: string;
+	category: "MAGAZINE" | "ANNOUNCE-CUL" | "ANNOUNCE-MIN";
 	descrption?: string;
 }
 

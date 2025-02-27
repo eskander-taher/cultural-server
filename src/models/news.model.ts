@@ -11,7 +11,7 @@ export interface INews extends Document {
 	thumbnail?: string;
 	images?: string[];
 	isImportant?: boolean;
-	category?: string;
+	category: string;
 	date: Date;
 }
 
