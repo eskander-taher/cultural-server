@@ -63,6 +63,7 @@ export const getActivityCategory = async (req: Request, res: Response) => {
 		res.status(500).send(error);
 	}
 };
+
 // Get all news items with category "EVENT"
 export const getEventCategory = async (req: Request, res: Response) => {
 	try {

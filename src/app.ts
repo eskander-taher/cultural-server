@@ -10,21 +10,25 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors())
-// app.use(
-// 	cors({
-// 		origin: ["https://admin-ruddy-eight.vercel.app", "https://yemculru.com"],
-// 		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-// 		allowedHeaders: ["Content-Type", "Authorization"],
-// 	})
-// );
+app.use(cors());
 
+// API routes
 app.use("/api", apiRouter);
 
+// Static files
 app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
 
-// Set up EJS as the template engine
+// Serve static files from the client build directory
+const clientPath = path.join(__dirname, "..", "client", "dist");
+app.use(express.static(clientPath));
+
+// Set up EJS as the template engine (if you're still using it)
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
+// Catch-all route to serve the client's index.html for client-side routing
+app.get("*", (req, res) => {
+  res.sendFile(path.join(clientPath, "index.html"));
+});
 
 export default app;
