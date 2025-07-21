@@ -19,7 +19,7 @@ app.use("/api", apiRouter);
 app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
 
 // Serve static files from the client build directory
-const clientPath = path.join(__dirname, "..", "client", "dist");
+const clientPath = path.join(__dirname, "..", "client", "frontend");
 app.use(express.static(clientPath));
 
 // Set up EJS as the template engine (if you're still using it)
